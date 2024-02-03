@@ -17,4 +17,4 @@ jobs:
           aws-region: us-east-1
       - name: copy files to S3 bucket
         run: |
-          aws s3 cp main.html "s3://gleanup-s3/"
+          aws s3 cp d3.txt "s3://gleanup-s3/"
