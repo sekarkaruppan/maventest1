@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "MY_DATE=$(date +%Y%m%d%H%M)" 
       - name: Run Test
         run: echo "Hello"
