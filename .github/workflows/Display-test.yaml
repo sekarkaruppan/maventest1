@@ -1,0 +1,15 @@
+name: Display time and variable every 3 hour
+
+on:
+  schedule:
+    - cron: '0 */3 * * *' 
+
+jobs:
+  Display-time-and-variable:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display time and variable
+        run: echo "Current time:$(date)"
+             TESTVAR="Welcome to Github"
+             echo "Variable Value:$TESTVAR"
