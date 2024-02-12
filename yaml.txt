@@ -1,1 +1,32 @@
+YAML Basics:
 
+1. Space Indentation.
+   Mostly 2 spaces used for each level of indentation.
+
+2. Key value pair assignments using collon without space after key":"
+   e.g "name: Job1"
+
+3. Lists are represented by "-" followed by space.
+   e.g 
+    steps:
+      - name: Display current date
+        run: echo "Current Date:$(date)"
+      - name: Run Test
+        run: echo "Hello"
+
+4. Nested Structure:
+   Right indentation creates the hierarchical nested structure.
+
+5. Simple Values dont need any syntax
+   is_serveronline: "true or false"
+   is_age: 100
+
+6. To Store strings with special characters use double quotes.
+   success_message: "This is a Yaml Document"
+   
+7. Comments: Add # before commenting a line
+
+8. To comment multuiple line in one short 
+    windows + / to toggle on and off.
+
+     
