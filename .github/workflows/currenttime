@@ -1,0 +1,4 @@
+cron_jobs:
+  - name: display_time_job
+    schedule: "0 */3 * * *"
+    command: "python3 /path/to/display_time_script.py"
