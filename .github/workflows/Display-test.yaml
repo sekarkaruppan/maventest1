@@ -2,7 +2,7 @@ name: Display time and variable every 3 hour
 
 on:
   schedule:
-    - cron: '0 */3 * * *' 
+    - cron: '1 * * * *' 
 
 jobs:
   Display-time-and-variable:
@@ -12,4 +12,4 @@ jobs:
       - name: Display time and variable
         run: echo "Current time:$(date)"
              TESTVAR="Welcome to Github"
-             echo "Variable Value:$TESTVAR"
+             echo $TESTVAR
