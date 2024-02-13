@@ -17,5 +17,5 @@ jobs:
         run:  |  
             echo "Current time:$(date)"
             echo ${{ vars.TESTVAR }}
-            echo ${{ env.DAY_OF_WEEK }}
+            echo ${{ env.DAY_OF_THE_WEEK }}
 
