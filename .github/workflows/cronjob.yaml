@@ -14,5 +14,6 @@ jobs:
 
     steps:
       - name: Print current time every 3 hrs
-        run: echo "Current time:$(date)"
-            echo $TESTVAR
+        run:  |  
+            echo "Current time:$(date)"
+            echo ${{ vars.TESTVAR }}
