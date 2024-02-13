@@ -2,7 +2,7 @@ name: Display time and variable every 3 hour
 
 on:
   schedule:
-    - cron: '1 * * * *' 
+    - cron: '* * * * *' 
 
 jobs:
   Display-time-and-variable:
