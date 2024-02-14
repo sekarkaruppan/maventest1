@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: dev
+    environment: prod
 
     steps:
       - name: Print current time every 3 hrs        
@@ -18,4 +18,5 @@ jobs:
             echo "Current time:$(date)"
             echo ${{ vars.TESTVAR }}
             echo ${{ vars.DAY_OF_THE_WEEK }}
+            echo ${{ vars.PROD_VAR }}
 
