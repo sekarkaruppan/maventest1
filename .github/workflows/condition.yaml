@@ -16,7 +16,18 @@ jobs:
       - name: Build
         run: echo "Building..."
 
-  deploy:
+  dev-deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'  # Condition for this job to run
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy
+        run: echo " DevDeploying..."
+
+  prod-deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'  # Condition for this job to run
 
@@ -25,4 +36,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy
-        run: echo "Deploying..."
+        run: echo " DevDeploying..."
