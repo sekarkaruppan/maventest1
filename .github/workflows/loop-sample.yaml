@@ -1,0 +1,21 @@
+name: loop Example
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        version: [1.0,2.0,3.0]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: echo "Build version {{ matrix.version }}"
