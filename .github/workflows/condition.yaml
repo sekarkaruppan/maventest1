@@ -1,0 +1,28 @@
+name: Conditional Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: echo "Building..."
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev'  # Condition for this job to run
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Deploy
+        run: echo "Deploying..."
