@@ -18,7 +18,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/dev'  # Condition for this job to run
+    if: github.ref == 'refs/heads/main'  # Condition for this job to run
 
     steps:
       - name: Checkout Repository
