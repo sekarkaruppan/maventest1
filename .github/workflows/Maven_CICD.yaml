@@ -1,9 +1,9 @@
 name: Maven CI/CD
 
 on:
-  #workflow_dispatch:
- push:
-    branches: [ maven ]
+  workflow_dispatch:
+ #push:
+    #branches: [ maven ]
   #pull_request:
     #branches: [ master ]
 
