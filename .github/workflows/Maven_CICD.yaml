@@ -27,12 +27,22 @@ jobs:
         name: Package
         path: staging
  
-    - name: Setup AWS CLI
-      uses: aws-actions/configure-aws-credentials@v1
+    # - name: Setup AWS CLI
+    #   uses: aws-actions/configure-aws-credentials@v1
+    #   with:
+    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     aws-region: us-east-1
+    # - name: copy files to S3 bucket
+    #   run: |
+    #       aws s3 cp staging "s3://gleanup-s3/"  
+
+    - name: Upload to S3
+      uses: shallwefootball/s3-upload-action@master
+      id: S3
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
-    - name: copy files to S3 bucket
-      run: |
-          aws s3 cp Package "s3://gleanup-s3/"       
+        aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_bucket: gleanup-s3
+        source_dir: staging   
+          
